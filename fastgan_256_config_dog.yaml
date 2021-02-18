@@ -1,0 +1,42 @@
+data: 
+    dir: 'data/few-shot-images/AnimalFace-dog'
+    data_type: 'celeba'
+    sz: 256
+
+
+training:
+    lr: 0.0002
+    bs: 8
+    iter_num: 200000
+    ttur_mult: 1.0
+    ema: 0.999
+    
+    beta1: 0.5
+    beta2: 0.999
+    weight_decay: 0
+    opt_type: 'adam'
+    n_critic: 1
+
+    loss_type: 'reg_hinge'
+    gradient_clip: 0
+    
+    n_workers: 10
+    diffaug: 'color,translation'
+
+
+model:
+    ic: 3
+    nz: 256
+    g_dim: 64
+    d_dim: 64
+    use_swish: True
+
+    model_sz: 256
+    model_type: 'fastgan'
+    weight_init: 'normal'
+
+
+logging:
+    log_dir: 'log_fastgan_256_dog2'
+    vis_interval: 250
+    fid_interval: 2500

@@ -1,0 +1,39 @@
+data: 
+    dir: 'data/mnist'
+    data_type: 'mnist'
+    sz: 32
+
+
+training:
+    lr: 0.0002
+    bs: 64
+    iter_num: 50000
+    ttur_mult: 1.0
+    ema: 0.999
+    
+    beta1: 0.0
+    beta2: 0.9
+    weight_decay: 0
+    opt_type: 'adam'
+    n_critic: 5
+
+    loss_type: 'hinge'
+    gradient_clip: 0
+    
+    n_workers: 10
+
+
+model:
+    ic: 1
+    nz: 128
+    bottom: 4
+    g_dim: 256
+    d_dim: 128
+
+    model_type: 'sngan_32'
+    weight_init: 'xavier'
+
+
+logging:
+    log_dir: 'log_sngan_32_mnist'
+    vis_interval: 200
